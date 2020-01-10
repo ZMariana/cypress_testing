@@ -9,4 +9,8 @@ export class TodoPage {
     validateText (todoIndex, expectedText) {
         cy.get(`.todo-list li:nth-child(${todoIndex +1}) label`).should('have.text', expectedText)
     }
+
+    toggle (todoIndex) {
+            cy.get(`.todo-list li:nth-child(${todoIndex + 1}) .toggle`).click()
+    }
 }
